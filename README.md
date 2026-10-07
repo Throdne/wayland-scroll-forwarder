@@ -35,7 +35,7 @@ sudo dnf install python3-evdev python3-xlib libXtst
 Install `wayland_scroll_forwarder`
 
 ```bash
-sudo curl -sL https://raw.githubusercontent.com/enexam/wayland-scroll-forwarder/main/scroll_forwarder.py -o /usr/local/bin/wayland_scroll_forwarder && sudo chmod +x /usr/local/bin/wayland_scroll_forwarder
+sudo curl -sL https://raw.githubusercontent.com/Throdne/wayland-scroll-forwarder/main/scroll_forwarder.py -o /usr/local/bin/wayland_scroll_forwarder && sudo chmod +x /usr/local/bin/wayland_scroll_forwarder
 ```
 
 ### First use
@@ -121,7 +121,7 @@ Not tested against anti-cheat softwares. USE AT YOUR OWN RISK.
 
 ## Troubleshooting
 
-Please [report issues](https://github.com/enexam/wayland-scroll-forwarder/issues/new) you are facing.
+Please [report issues](https://github.com/Throdne/wayland-scroll-forwarder/issues/new) you are facing.
 
 ### Common issues
 
