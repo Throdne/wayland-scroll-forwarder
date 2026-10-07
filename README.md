@@ -69,7 +69,18 @@ sudo wayland_scroll_forwarder GeForceNOW
 The scroll forwarder will stop when closing your app (such as GFN).
 You can also press CTRL+C in the terminal running the scroll forwarder to stop it.
 
-### Quick install (recommended)
+### Arch Linux (AUR)
+
+Available on the AUR as [`wayland-scroll-forwarder-git`](https://aur.archlinux.org/packages/wayland-scroll-forwarder-git):
+
+```bash
+yay -S wayland-scroll-forwarder-git      # or paru -S, or any AUR helper
+systemctl --user enable --now wayland-scroll-forwarder@GeForceNOW
+```
+
+The service name after `@` is the app's `WM_CLASS`.
+
+### Quick install (other distributions)
 
 One line, straight from the repo (replace `GeForceNOW` with your app's WM_CLASS):
 
