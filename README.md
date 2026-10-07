@@ -2,6 +2,8 @@
 
 This script fixes scroll wheel when using apps designed for X11 on Wayland.
 
+It is designed for **NVIDIA GeForce NOW** (the Linux Flatpak client, window class `GeForceNOW`), where the mouse wheel does not work on Wayland. It works the same way for any other X11/XWayland app: pass that app's `WM_CLASS` instead.
+
 ## Installation
 
 ### Dependencies
