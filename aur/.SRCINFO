@@ -1,0 +1,18 @@
+pkgbase = wayland-scroll-forwarder-git
+	pkgdesc = Forward mouse wheel events to X11 (XWayland) apps that miss them on Wayland
+	pkgver = r12.4b196d9
+	pkgrel = 1
+	url = https://github.com/Throdne/wayland-scroll-forwarder
+	install = wayland-scroll-forwarder.install
+	arch = any
+	license = GPL-3.0-or-later
+	makedepends = git
+	depends = python
+	depends = python-evdev
+	depends = python-xlib
+	provides = wayland-scroll-forwarder
+	conflicts = wayland-scroll-forwarder
+	source = wayland-scroll-forwarder::git+https://github.com/Throdne/wayland-scroll-forwarder.git
+	sha256sums = SKIP
+
+pkgname = wayland-scroll-forwarder-git

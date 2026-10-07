@@ -1,7 +1,7 @@
 # Maintainer: Jerico Thomas <Jerico@Tekop.net>
 pkgname=wayland-scroll-forwarder-git
 _pkgname=wayland-scroll-forwarder
-pkgver=r0.0000000
+pkgver=r12.4b196d9
 pkgrel=1
 pkgdesc='Forward mouse wheel events to X11 (XWayland) apps that miss them on Wayland'
 arch=('any')
