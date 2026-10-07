@@ -1,4 +1,4 @@
-# Maintainer: Throdne
+# Maintainer: Throdne <Throdne@gmail.com>
 pkgname=wayland-scroll-forwarder-git
 _pkgname=wayland-scroll-forwarder
 pkgver=r12.4b196d9
