@@ -1,4 +1,4 @@
-# Maintainer: Jerico Thomas <Jerico@Tekop.net>
+# Maintainer: Throdne
 pkgname=wayland-scroll-forwarder-git
 _pkgname=wayland-scroll-forwarder
 pkgver=r12.4b196d9
