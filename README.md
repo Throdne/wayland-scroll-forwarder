@@ -67,7 +67,13 @@ You can also press CTRL+C in the terminal running the scroll forwarder to stop i
 
 ### Quick install (recommended)
 
-`install.sh` installs the script to `~/.local/bin`, writes a systemd user service for your app, and starts it.
+One line, straight from the repo (replace `GeForceNOW` with your app's WM_CLASS):
+
+```bash
+d=$(mktemp -d) && git clone -q --depth 1 https://github.com/Throdne/wayland-scroll-forwarder.git "$d" && "$d/install.sh" GeForceNOW
+```
+
+`install.sh` installs the script to `~/.local/bin`, writes a systemd user service for your app, and starts it. From a local clone:
 
 ```bash
 ./install.sh GeForceNOW          # or any WM_CLASS; several can be listed
