@@ -65,21 +65,45 @@ sudo wayland_scroll_forwarder GeForceNOW
 The scroll forwarder will stop when closing your app (such as GFN).
 You can also press CTRL+C in the terminal running the scroll forwarder to stop it.
 
-### Create alias for your apps
+### Quick install (recommended)
 
-After testing your app with the scroll forwarder, you can create an alias with the specific class. This will make a single command start both your app and the scroll forwarder.
-
-Example with GeForce Now (replace app name and class name as needed)
+`install.sh` installs the script to `~/.local/bin`, writes a systemd user service for your app, and starts it.
 
 ```bash
-echo "alias geforce-now='sudo wayland_scroll_forwarder GeForceNOW & flatpak run com.nvidia.geforcenow'" >> ~/.bashrc && source ~/.bashrc
+./install.sh GeForceNOW          # or any WM_CLASS; several can be listed
+./install.sh --udev GeForceNOW   # also install the udev rule (mouse access without sudo)
+./install.sh --uninstall         # remove everything
 ```
 
-Now you can launch the app with scroll fix by simply typing in a terminal the alias:
+The sections below describe the same steps manually.
+
+### Run without sudo
+
+The script only needs to read mouse devices. Either install the udev rule (mice only):
 
 ```bash
-geforce-now
+sudo cp contrib/99-scroll-forwarder.rules /etc/udev/rules.d/
+sudo udevadm control --reload && sudo udevadm trigger --subsystem-match=input
 ```
+
+or add yourself to the `input` group (also exposes keyboards; log out and in afterwards).
+Then run `wayland_scroll_forwarder GeForceNOW` as a normal user.
+
+### Run automatically as a daemon
+
+The forwarder waits for the window, forwards scrolls only while it is focused, and keeps
+waiting if the window closes and reopens, so it can simply stay running.
+
+```bash
+mkdir -p ~/.local/bin ~/.config/systemd/user
+cp scroll_forwarder.py ~/.local/bin/wayland_scroll_forwarder && chmod +x ~/.local/bin/wayland_scroll_forwarder
+cp contrib/wayland-scroll-forwarder.service ~/.config/systemd/user/
+systemctl --user enable --now wayland-scroll-forwarder
+journalctl --user -u wayland-scroll-forwarder -f   # logs
+```
+
+Options: several window classes can be given, `--no-focus-check` forwards even when the
+window is unfocused, `-v` enables debug logging.
 
 ## Multiplayer
 
