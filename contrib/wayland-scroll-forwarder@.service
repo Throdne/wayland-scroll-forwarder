@@ -1,0 +1,12 @@
+[Unit]
+Description=Wayland scroll forwarder for X11 app with WM_CLASS %i
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/wayland_scroll_forwarder %i
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=graphical-session.target
