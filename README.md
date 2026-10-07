@@ -6,6 +6,8 @@ It is designed for **NVIDIA GeForce NOW** (the Linux Flatpak client, window clas
 
 Developed and tested on **CachyOS (Arch Linux)** with KDE Plasma on Wayland. Other distributions and desktops should work but are untested.
 
+> **Independent fork.** This is a separate, maintained-by-me version of [enexam/wayland-scroll-forwarder](https://github.com/enexam/wayland-scroll-forwarder), which provided the original idea and code (GPL-3.0). The rewrite, install script and AUR package here are my own changes. The original author doesn't support or maintain them, so please report issues here, not upstream.
+
 ## Installation
 
 ### Dependencies
