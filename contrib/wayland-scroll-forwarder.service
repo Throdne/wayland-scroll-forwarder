@@ -1,0 +1,13 @@
+[Unit]
+Description=Wayland scroll forwarder for X11 apps
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+# Edit the class name (find it with: xprop WM_CLASS) and install path as needed.
+ExecStart=%h/.local/bin/wayland_scroll_forwarder GeForceNOW
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=graphical-session.target

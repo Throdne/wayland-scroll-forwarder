@@ -1,0 +1,3 @@
+# Let the logged-in user read mouse devices, so the forwarder does not need root.
+# Narrower than adding yourself to the 'input' group (which also exposes keyboards).
+SUBSYSTEM=="input", KERNEL=="event*", ENV{ID_INPUT_MOUSE}=="1", TAG+="uaccess"
